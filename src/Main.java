@@ -20,6 +20,9 @@ public class Main {
         teacher.displayInfo();
         teacher1.displayInfo();
 
+        System.out.println(student.calculateAverageMarks());
+        System.out.println(student1.calculateAverageMarks());
+
 
     }
 

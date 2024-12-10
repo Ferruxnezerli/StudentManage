@@ -2,15 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class Student extends Person {
-
     private int rollNumber;
-    private List<String> Subjects;
+    private List<String> subjects;
     private List<Integer> marks;
 
     public Student(String name, int age, int rollNumber) {
         super(name, age);
         this.rollNumber = rollNumber;
-        Subjects=new ArrayList<>();
+        subjects=new ArrayList<>();
         marks=new ArrayList<>();
     }
 
@@ -20,12 +19,11 @@ public  class Student extends Person {
         System.out.println("Name: "+getName());
         System.out.println("Age: "+getAge());
 
-        for (int i = 0; i < Subjects.size(); i++) {
-            System.out.println(Subjects.get(i));
+        for (int i = 0; i < subjects.size(); i++) {
+            System.out.println(subjects.get(i));
             System.out.println(marks.get(i));
         }
     }
-
 
     public int getRollNumber() {
         return rollNumber;
@@ -36,11 +34,11 @@ public  class Student extends Person {
     }
 
     public List<String> getSubject() {
-        return Subjects;
+        return subjects;
     }
 
     public void setSubject(List<String> subject) {
-        Subjects = subject;
+        subjects = subject;
     }
 
     public List<Integer> getMarks() {
@@ -56,14 +54,14 @@ public  class Student extends Person {
             throw new WrongNumber("Wrong Number");
         }
         marks.add(mark);
-        Subjects.add(subject);
+        subjects.add(subject);
     }
 
-    public void calculateAverageMarks(){
+    public double calculateAverageMarks(){
          int sum=0;
         for (int i = 0; i < marks.size(); i++) {
             sum=sum+marks.get(i);
         }
-        System.out.println("Average: "+sum/marks.size());
+        return (double) sum/marks.size();
     }
 }
